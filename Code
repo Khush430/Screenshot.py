@@ -1,0 +1,26 @@
+# Before using this code, install the required packages by running the following commands in the Command Prompt:
+# pip install virtualenv
+# virtualenv projectsenv
+
+import time
+import pyautogui
+
+def take_screenshot(filename="screenshot.png", delay=4):
+    """
+    Takes a screenshot after a specified delay.
+
+    Args:
+    filename (str): The name of the file where the screenshot will be saved.
+    delay (int): The time in seconds to wait before taking the screenshot.
+    """
+    try:
+        time.sleep(delay)
+        img = pyautogui.screenshot(filename)
+        img.show()
+        print(f"Screenshot saved as {filename}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+# Call the function to take a screenshot
+take_screenshot("test.png")
+
